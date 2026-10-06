@@ -1,2 +1,2 @@
 # 2D-Game-GP
-Farhan / 
+Farhan / Lesli / Saliou
