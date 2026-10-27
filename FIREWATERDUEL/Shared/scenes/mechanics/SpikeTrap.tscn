@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://Shared/scripts/mechanics/trap.gd" id="1"]
+[ext_resource type="Script" path="res://Shared/scripts/mechanics/hazard.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/plate_tile.png" id="3"]
+[ext_resource type="Texture2D" path="res://assets/plate_tile_armed.png" id="4"]
+[ext_resource type="Texture2D" path="res://assets/spike_tile.png" id="5"]
+
+[sub_resource type="RectangleShape2D" id="PlateShape"]
+size = Vector2(32, 10)
+
+[sub_resource type="RectangleShape2D" id="SpikeShape"]
+size = Vector2(48, 24)
+
+[node name="SpikeTrap" type="Node2D"]
+
+[node name="Plate" type="Area2D" parent="."]
+script = ExtResource("1")
+hazard_path = NodePath("../Hazard")
+
+[node name="PlateCollision" type="CollisionShape2D" parent="Plate"]
+shape = SubResource("PlateShape")
+
+[node name="IdleSprite" type="Sprite2D" parent="Plate"]
+texture = ExtResource("3")
+
+[node name="ArmedSprite" type="Sprite2D" parent="Plate"]
+visible = false
+texture = ExtResource("4")
+
+[node name="Hazard" type="Area2D" parent="."]
+position = Vector2(70, -7)
+script = ExtResource("2")
+deadly_to = "both"
+active = false
+
+[node name="HazardCollision" type="CollisionShape2D" parent="Hazard"]
+shape = SubResource("SpikeShape")
+
+[node name="Sprite2D" type="Sprite2D" parent="Hazard"]
+texture = ExtResource("5")
