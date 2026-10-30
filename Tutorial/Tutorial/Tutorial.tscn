@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://48wvn1c0pd46"]
+
+[node name="Tutorial" type="Node2D" unique_id=1691005277]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=598604597]
+position = Vector2(512, 288)
+
+[node name="TitleLabel" type="Label" parent="." unique_id=1075699619]
+offset_left = 212.0
+offset_top = 30.0
+offset_right = 812.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 32
+text = "How to Play"
+horizontal_alignment = 1
+
+[node name="Blurb" type="Label" parent="." unique_id=1758518170]
+offset_left = 160.0
+offset_top = 75.0
+offset_right = 864.0
+offset_bottom = 115.0
+text = "Fire is immune to lava but dies in water. Water is immune to water but dies in lava.
+Last player standing wins each level — 2 levels decide the match."
+horizontal_alignment = 1
+
+[node name="P1Panel" type="Panel" parent="." unique_id=1114273777]
+offset_left = 90.0
+offset_top = 140.0
+offset_right = 450.0
+offset_bottom = 400.0
+
+[node name="P1Title" type="Label" parent="P1Panel" unique_id=1671353263]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 350.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 24
+text = "Player 1 — Blaze (Fire)"
+
+[node name="P1Controls" type="Label" parent="P1Panel" unique_id=953501980]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 50.0
+offset_right = 350.0
+offset_bottom = 230.0
+text = "A / D — move left / right
+W — jump
+S — push nearby opponent
+
+Safe in lava. Dies in water."
+
+[node name="P2Panel" type="Panel" parent="." unique_id=1463339558]
+offset_left = 574.0
+offset_top = 140.0
+offset_right = 934.0
+offset_bottom = 400.0
+
+[node name="P2Title" type="Label" parent="P2Panel" unique_id=963403061]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 350.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 24
+text = "Player 2 — Splash (Water)"
+
+[node name="P2Controls" type="Label" parent="P2Panel" unique_id=1756587790]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 50.0
+offset_right = 350.0
+offset_bottom = 230.0
+text = "Left / Right — move
+Up — jump
+Down — push nearby opponent
+
+Safe in water. Dies in lava."
+
+[node name="TrapNote" type="Label" parent="." unique_id=669101836]
+offset_left = 160.0
+offset_top = 420.0
+offset_right = 864.0
+offset_bottom = 470.0
+text = "Yellow plates trigger spike traps a short distance away — spikes
+kill whoever is standing in them, fire or water. Lure your opponent in!"
+horizontal_alignment = 1
+
+[node name="BackButton" type="Button" parent="." unique_id=1695494825]
+offset_left = 452.0
+offset_top = 500.0
+offset_right = 572.0
+offset_bottom = 536.0
+text = "Back to Menu"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
