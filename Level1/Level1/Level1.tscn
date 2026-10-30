@@ -1,0 +1,169 @@
+[gd_scene format=3 uid="uid://btsnumagnqlkw"]
+
+[ext_resource type="Texture2D" uid="uid://5n4ytojg5ys8" path="res://assets/background.png" id="2"]
+[ext_resource type="PackedScene" uid="uid://v6tsnjcy5vly" path="res://scenes/mechanics/TileVisual.tscn" id="3"]
+[ext_resource type="PackedScene" path="res://scenes/mechanics/LavaHazard.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://scenes/mechanics/FloorCollider.tscn" id="4a"]
+[ext_resource type="PackedScene" path="res://scenes/mechanics/WaterHazard.tscn" id="5"]
+[ext_resource type="PackedScene" path="res://scenes/mechanics/SpikeTrap.tscn" id="6"]
+
+[node name="Level1" type="Node2D" unique_id=1172229879]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1997171255]
+position = Vector2(512, 288)
+texture = ExtResource("2")
+
+[node name="FloorCollider" parent="." unique_id=2004060883 instance=ExtResource("4a")]
+position = Vector2(504, 552)
+scale = Vector2(21, 1)
+
+[node name="FloorTile0" parent="." unique_id=1117380349 instance=ExtResource("3")]
+position = Vector2(24, 552)
+
+[node name="FloorTile1" parent="." unique_id=856549908 instance=ExtResource("3")]
+position = Vector2(72, 552)
+
+[node name="FloorTile2" parent="." unique_id=1576980061 instance=ExtResource("3")]
+position = Vector2(120, 552)
+
+[node name="FloorTile3" parent="." unique_id=385472327 instance=ExtResource("3")]
+position = Vector2(168, 552)
+
+[node name="FloorTile4" parent="." unique_id=1800383690 instance=ExtResource("3")]
+position = Vector2(216, 552)
+
+[node name="FloorTile5" parent="." unique_id=1786044780 instance=ExtResource("3")]
+position = Vector2(264, 552)
+
+[node name="FloorTile6" parent="." unique_id=1266718449 instance=ExtResource("3")]
+position = Vector2(312, 552)
+
+[node name="FloorTile7" parent="." unique_id=684499830 instance=ExtResource("3")]
+position = Vector2(360, 552)
+
+[node name="FloorTile8" parent="." unique_id=1168493297 instance=ExtResource("3")]
+position = Vector2(408, 552)
+
+[node name="FloorTile9" parent="." unique_id=1058894526 instance=ExtResource("3")]
+position = Vector2(456, 552)
+
+[node name="FloorTile10" parent="." unique_id=924289125 instance=ExtResource("3")]
+position = Vector2(504, 552)
+
+[node name="FloorTile11" parent="." unique_id=1306137074 instance=ExtResource("3")]
+position = Vector2(552, 552)
+
+[node name="FloorTile12" parent="." unique_id=2146544910 instance=ExtResource("3")]
+position = Vector2(600, 552)
+
+[node name="FloorTile13" parent="." unique_id=1205527660 instance=ExtResource("3")]
+position = Vector2(648, 552)
+
+[node name="FloorTile14" parent="." unique_id=1370088223 instance=ExtResource("3")]
+position = Vector2(696, 552)
+
+[node name="FloorTile15" parent="." unique_id=1093445925 instance=ExtResource("3")]
+position = Vector2(744, 552)
+
+[node name="FloorTile16" parent="." unique_id=505152482 instance=ExtResource("3")]
+position = Vector2(792, 552)
+
+[node name="FloorTile17" parent="." unique_id=2077660273 instance=ExtResource("3")]
+position = Vector2(840, 552)
+
+[node name="FloorTile18" parent="." unique_id=29479800 instance=ExtResource("3")]
+position = Vector2(888, 552)
+
+[node name="FloorTile19" parent="." unique_id=1017022812 instance=ExtResource("3")]
+position = Vector2(936, 552)
+
+[node name="FloorTile20" parent="." unique_id=287719157 instance=ExtResource("3")]
+position = Vector2(984, 552)
+
+[node name="LavaZone" parent="." unique_id=89716486 instance=ExtResource("4")]
+position = Vector2(288, 528)
+scale = Vector2(2, 1)
+script = null
+
+[node name="WaterZone" parent="." unique_id=1425028114 instance=ExtResource("5")]
+position = Vector2(720, 528)
+scale = Vector2(2, 1)
+script = null
+
+[node name="MidPlatCollider" parent="." unique_id=352085504 instance=ExtResource("4a")]
+position = Vector2(504, 420)
+scale = Vector2(3, 1)
+
+[node name="MidPlatTile0" parent="." unique_id=678794250 instance=ExtResource("3")]
+position = Vector2(456, 420)
+
+[node name="MidPlatTile1" parent="." unique_id=1792750761 instance=ExtResource("3")]
+position = Vector2(504, 420)
+
+[node name="MidPlatTile2" parent="." unique_id=850409978 instance=ExtResource("3")]
+position = Vector2(552, 420)
+
+[node name="SpikeTrap1" parent="." unique_id=1308373315 instance=ExtResource("6")]
+position = Vector2(480, 403)
+
+[node name="Player1" parent="." unique_id=1318431184]
+position = Vector2(80, 480)
+element = "fire"
+input_prefix = "p1"
+
+[node name="Player2" parent="." unique_id=1603683722]
+position = Vector2(944, 480)
+element = "water"
+input_prefix = "p2"
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=874454401]
+
+[node name="LevelLabel" type="Label" parent="UI" unique_id=1129552274]
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 200.0
+offset_bottom = 42.0
+theme_override_font_sizes/font_size = 22
+text = "Level 1"
+
+[node name="HelpLabel" type="Label" parent="UI" unique_id=1282835957]
+offset_left = 16.0
+offset_top = 546.0
+offset_right = 1008.0
+offset_bottom = 572.0
+text = "P1: A/D move, W jump, S push    |    P2: arrows move/jump, Down push"
+
+[node name="ResultPanel" type="Panel" parent="UI" unique_id=1480374730]
+offset_left = 312.0
+offset_top = 200.0
+offset_right = 712.0
+offset_bottom = 380.0
+
+[node name="ResultLabel" type="Label" parent="UI/ResultPanel" unique_id=877464360]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 20.0
+offset_right = 390.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 22
+text = "Round Over"
+horizontal_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="UI/ResultPanel" unique_id=1834620719]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 90.0
+offset_right = 290.0
+offset_bottom = 126.0
+text = "Next Level"
+
+[node name="MenuButton" type="Button" parent="UI/ResultPanel" unique_id=1399527623]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 135.0
+offset_right = 290.0
+offset_bottom = 171.0
+text = "Main Menu"
+
+[connection signal="pressed" from="UI/ResultPanel/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="UI/ResultPanel/MenuButton" to="." method="_on_menu_button_pressed"]
